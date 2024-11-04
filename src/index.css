@@ -3,11 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(#F8F5F0, #ffd894 80%);
-}
 
 html {
   scroll-behavior: smooth;
