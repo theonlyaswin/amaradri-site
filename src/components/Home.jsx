@@ -1,4 +1,4 @@
-'use client'
+
 
 import App from './App';
 import React, { useEffect, useRef, useState } from 'react';
