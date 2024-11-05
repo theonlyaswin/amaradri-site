@@ -431,7 +431,7 @@ export default function Home () {
               className="rounded-16"
             >
               <img
-                src="img/about/8/1.png"
+                src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                 alt="image"
                 className="rounded-16 col-12"
               />
@@ -447,7 +447,7 @@ export default function Home () {
                 className="rounded-16"
               >
                 <img
-                  src="img/about/8/2.png"
+                  src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                   alt="image"
                   className="rounded-16 col-12"
                 />
@@ -463,7 +463,7 @@ export default function Home () {
               className="rounded-16"
             >
               <img
-                src="img/about/8/3.png"
+                src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                 alt="image"
                 className="rounded-16 col-12"
               />
@@ -521,7 +521,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/1.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
@@ -538,7 +538,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/2.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
@@ -555,7 +555,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/3.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
@@ -572,7 +572,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/4.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
@@ -589,7 +589,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/5.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
@@ -606,7 +606,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/6.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
@@ -623,7 +623,7 @@ export default function Home () {
                   <div className="baseCard__image ratio ratio-33:45 rounded-16">
                     <div className="-hover-image-scale__image">
                       <img
-                        src="img/cards/1/7.png"
+                        src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
                         alt="image"
                         className="img-ratio"
                       />
