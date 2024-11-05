@@ -882,8 +882,9 @@ export default function Home () {
             <li><a href="#" className="hover:text-gray-400 transition-colors">Contact</a></li>
           </ul>
         </nav>
-        <div className="mt-6">
-          <p>&copy; 2023 Amaradri Weddings. All rights reserved.</p>
+        <div className="mt-6 flex justify-center items-center flex-col">
+          <p>&copy; 2023 Amaradri Weddings.</p>
+          <p>Developed by <a href="mailto:aswingnair.2003@gmail.com" className='underline'>Aswin</a></p>
         </div>
       </div>
     </footer>
