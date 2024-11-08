@@ -2,8 +2,22 @@
 
 import App from './App';
 import React, { useEffect, useRef, useState } from 'react';
+import { HeroParallax } from "./ui/hero-parallax";
 
 
+  const redirectToWhatsApp = () => {
+  // Phone number with country code
+  const phoneNumber = "+919061560364"; // Replace with your actual number
+  
+  // Message to be pre-filled (URL encoded)
+  const message = encodeURIComponent("Hi, i would like to book an appointment for a wedding shoot.");
+  
+  // WhatsApp URL
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+  
+  // Open in new tab
+  window.open(whatsappURL, '_blank');
+};
 
 
 const Navbar = () => {
@@ -33,7 +47,7 @@ const Navbar = () => {
         
         {/* Right Section - Book Now Button (Hidden on Mobile) */}
         <div className="hidden md:block">
-          <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium">
+          <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium" onClick={redirectToWhatsApp}>
             Book Now
           </button>
         </div>
@@ -50,10 +64,10 @@ const Navbar = () => {
           <h2 className="text-xl font-bold mb-4">Menu</h2>
           <ul className="space-y-4">
             <li><a href="#" className="text-gray-700 hover:text-black">Home</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-black">About Us</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-black">Services</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-black">Gallery</a></li>
-            <li><a href="#" className="text-gray-700 hover:text-black">Contact</a></li>
+            <li><a href="#about" className="text-gray-700 hover:text-black">About Us</a></li>
+            <li><a href="#services" className="text-gray-700 hover:text-black">Services</a></li>
+            <li><a href="#gallery" className="text-gray-700 hover:text-black">Gallery</a></li>
+            <li><div onClick={redirectToWhatsApp} className="text-gray-700 hover:text-black cursor-pointer">Contact</div></li>
           </ul>
         </div>
       </div>
@@ -75,49 +89,15 @@ const Navbar = () => {
 export default function Home () {
 
 
+
+
+
+
   const videoRef = useRef(null);
-  const playButtonRef = useRef(null);
   const svgRef = useRef(null);
   const svgContainerRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    const playButton = playButtonRef.current;
 
-    const handlePlayPause = () => {
-      if (isPlaying) {
-        video.pause();
-        setIsPlaying(false);
-      } else {
-        video.play();
-        setIsPlaying(true);
-      }
-    };
-
-    playButton.addEventListener('click', handlePlayPause);
-
-    // Optional: Pause video when it goes out of view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting && isPlaying) {
-            video.pause();
-            setIsPlaying(false);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(video);
-
-    // Cleanup event listeners and observer on unmount
-    return () => {
-      playButton.removeEventListener('click', handlePlayPause);
-      observer.disconnect();
-    };
-  }, [isPlaying]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -147,7 +127,21 @@ export default function Home () {
   }, []);
 
 
+useEffect(() => {
+  const track = document.querySelector('.carousel-track');
+  let currentIndex = 0;
+  
+  const slideImages = () => {
+    currentIndex = (currentIndex + 1) % 3; // 3 is the number of images
+    if (track) {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  };
 
+  const intervalId = setInterval(slideImages, 3000); // Change slide every 3 seconds
+
+  return () => clearInterval(intervalId);
+}, []);
 
 
 
@@ -167,22 +161,27 @@ export default function Home () {
   {/* cursor end */}
   <main className="bg-light-1">
     <section data-anim-wrap="" className="hero -type-6">
-      <div className="hero__bg rounded-16">
-        <div className="video-container">
-          <video
-            id="heroVideo"
-            ref={videoRef}
-            muted=""
-            loop=""
-            className="img-ratio rounded-16"
-          >
-            <source
-              src="https://videos.pexels.com/video-files/11122341/11122341-hd_1920_1080_25fps.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
+          <div className="hero__bg rounded-16 h-[80vh] md:h-[90vh] relative overflow-hidden">
+    <div className="carousel-container w-full h-full absolute top-0 left-0">
+      <div className="carousel-track flex transition-transform duration-500 ease-in-out h-full">
+        <img
+          src="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg"
+          alt="pic-1"
+          className="w-[100vw] h-full object-cover flex-shrink-0"
+        />
+        <img
+          src="https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg"
+          alt="pic-2"
+          className="w-[100vw] h-full object-cover flex-shrink-0"
+        />
+        <img
+          src="https://images.pexels.com/photos/1261731/pexels-photo-1261731.jpeg"
+          alt="pic-3"
+          className="w-[100vw] h-full object-cover flex-shrink-0"
+        />
       </div>
+    </div>
+  </div>
       <div className="container">
         <div className="row justify-center">
           <div className="col-auto">
@@ -198,26 +197,17 @@ export default function Home () {
                 className="hero__title text-white"
               >
                 Eternalize Your <br className="lg:d-none" />
-                Beloved Momments
+                Beloved Momments <br/>
+                ✦✦
               </h1>
-              <div
-                data-anim-child="slide-up delay-6"
-                className="d-flex justify-center mt-40 md:mt-20"
-              >
-                <button
-                  className="hero__button d-flex flex-column items-center"
-                  id="playButton" ref={playButtonRef}
-                >
-                  <div className="size-70 flex-center rounded-full bg-accent-1-50 blur-1 border-white-10">
-                    <i className="icon-play text-21 fw-500 text-white" />
-                  </div>
-                </button>
-              </div>
+              
             </div>
           </div>
         </div>
       </div>
     </section>
+
+
     <div className="svg-container mt-100 sm:mt-50" ref={svgContainerRef}>
       <svg
         className="scroll-reveal"
@@ -370,6 +360,8 @@ export default function Home () {
         />
       </svg>
     </div>
+
+    
     <section className="layout-pt-lg">
       <div data-anim-wrap="" className="container">
         <div className="row justify-center text-center ">
@@ -400,7 +392,7 @@ export default function Home () {
               </div>
             </div>
             <div data-anim-child="slide-up delay-5">
-              <button className="button -type-1 mx-auto mt-50 md:mt-30">
+              <button className="button -type-1 mx-auto mt-50 md:mt-30" onClick={redirectToWhatsApp}>
                 <i className="-icon">
                   <svg
                     width={50}
@@ -476,6 +468,11 @@ export default function Home () {
       </div>
     </section>
 
+
+    <HeroParallax products={products}/>
+    <div id="about"></div>
+
+
     <section className="layout-pt-lg">
       <center>
         <h2 className="text-64 md:text-40 capitalize">
@@ -488,6 +485,62 @@ export default function Home () {
         
 
 
+            <section className="layout-pt-lg">
+      <div data-anim-wrap="" className="container">
+        <div className="row justify-center text-center ">
+          <div className="col-xl-8 col-lg-10">
+            <div data-split="lines" data-anim-child="split-lines delay-2">
+              <div className="text-15 uppercase mb-30 sm:mb-10">
+                AMARADRI WEDDINGS
+              </div>
+              <h2 className="text-64 md:text-40 capitalize">
+                WE ARE DELIGHTED TO <br className="lg:d-none" />
+                JOIN HANDS TO MAKE YOUR DAY SPECIAL
+              </h2>
+            </div>
+            <div
+              data-anim-child="slide-up delay-4"
+              className="row justify-center"
+            >
+              <div className="col-lg-8">
+                <p className="mt-40 md:mt-20">
+                  Connet with us!
+                </p>
+              </div>
+            </div>
+            <div data-anim-child="slide-up delay-5">
+              <button className="button -type-1 mx-auto mt-50 md:mt-30" onClick={redirectToWhatsApp}>
+                <i className="-icon">
+                  <svg
+                    width={50}
+                    height={30}
+                    viewBox="0 0 50 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M35.8 28.0924C43.3451 28.0924 49.4616 21.9759 49.4616 14.4308C49.4616 6.88577 43.3451 0.769287 35.8 0.769287C28.255 0.769287 22.1385 6.88577 22.1385 14.4308C22.1385 21.9759 28.255 28.0924 35.8 28.0924Z"
+                      stroke="#122223"
+                    />
+                    <path
+                      d="M33.4808 10.2039L32.9985 10.8031L37.2931 14.2623H0.341553V15.0315H37.28L33.0008 18.4262L33.4785 19.0285L39 14.6492L33.4808 10.2039Z"
+                      fill="#122223"
+                    />
+                  </svg>
+                </i>
+                Book now
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="row x-gap-50 y-gap-30 pt-100 sm:50">
+
+          
+        </div>
+      </div>
+    </section>
+
+
 
     <section className="layout-pb-lg pt-100 sm:pt-50">
       <div data-anim-wrap="" className="container">
@@ -496,6 +549,7 @@ export default function Home () {
             data-split="lines"
             data-anim-child="split-lines delay-2"
             className="col-auto"
+            id="gallery"
           >
             <div className="text-15 uppercase mb-30 sm:mb-10">
               FRAMES OF JOY
@@ -653,6 +707,7 @@ export default function Home () {
             data-anim-child="split-lines delay-2"
             className="col-auto"
           >
+            <div id="services"></div>
             <div className="text-15 uppercase mb-30 sm:mb-10">EXPLORE</div>
             <h2 className="text-64 md:text-40 lh-11">Our Offerings</h2>
           </div>
@@ -897,3 +952,92 @@ export default function Home () {
 
     );
 }
+
+
+
+export const products = [
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/book-back.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC00680.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC00933.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC00966.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC00983.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01011.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01103.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01071.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01420.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01420.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01420.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01420.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01420.jpg",
+  },
+  {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/textures/DSC01420.jpg",
+  },
+];
