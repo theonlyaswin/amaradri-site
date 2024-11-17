@@ -444,7 +444,9 @@ export default function Home () {
     <div id="about"></div>
 
 
-    <section className="layout-pt-lg">
+     {/*
+     
+     <section className="layout-pt-lg">
       <center>
         <h2 className="text-64 md:text-40 capitalize">
                ✾ HAPPY FACES ✾
@@ -453,6 +455,8 @@ export default function Home () {
       
       <App />
     </section>
+
+    */}
         
 
 
