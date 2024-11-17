@@ -4,9 +4,9 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
-    "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg",
-    "https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg",
-    "https://images.pexels.com/photos/1261731/pexels-photo-1261731.jpeg"
+    '/img/2.JPG',
+    '/img/1.JPG',
+    '/img/8.JPG'
   ];
 
   useEffect(() => {

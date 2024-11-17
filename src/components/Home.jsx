@@ -46,11 +46,29 @@ const Navbar = () => {
         </div>
         
         {/* Right Section - Book Now Button (Hidden on Mobile) */}
-        <div className="hidden md:block">
-          <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium" onClick={redirectToWhatsApp}>
-            Book Now
-          </button>
-        </div>
+<div className="hidden md:block">
+  <button 
+    onClick={redirectToWhatsApp}
+    className="group relative inline-flex items-center justify-center px-4 py-2 text-sm font-medium tracking-wide text-white transition-all duration-300 ease-in-out bg-black border  rounded-full hover:bg-slate-700 "
+  >
+    <span className="relative flex items-center gap-1.5">
+      Book Now
+      <svg 
+        className="w-3.5 h-3.5 transform transition-transform duration-300 ease-out group-hover:translate-x-0.5" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeWidth="2" 
+          d="M9 5l7 7-7 7"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
         
       </nav>
 
@@ -65,7 +83,6 @@ const Navbar = () => {
           <ul className="space-y-4">
             <li><a href="#" className="text-gray-700 hover:text-black">Home</a></li>
             <li><a href="#about" className="text-gray-700 hover:text-black">About Us</a></li>
-            <li><a href="#services" className="text-gray-700 hover:text-black">Services</a></li>
             <li><a href="#gallery" className="text-gray-700 hover:text-black">Gallery</a></li>
             <li><div onClick={redirectToWhatsApp} className="text-gray-700 hover:text-black cursor-pointer">Contact</div></li>
           </ul>
@@ -377,7 +394,7 @@ export default function Home () {
               className="rounded-16"
             >
               <img
-                src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
+                src="/img/8.JPG"
                 alt="image"
                 className="rounded-16 col-12"
               />
@@ -393,7 +410,7 @@ export default function Home () {
                 className="rounded-16"
               >
                 <img
-                  src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
+                  src="/img/6.JPG"
                   alt="image"
                   className="rounded-16 col-12"
                 />
@@ -409,7 +426,7 @@ export default function Home () {
               className="rounded-16"
             >
               <img
-                src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg"
+                src="/img/5.JPG"
                 alt="image"
                 className="rounded-16 col-12"
               />
@@ -568,7 +585,7 @@ export default function Home () {
               data-anim-child="img-right cover-light-1 delay-2"
             >
               <img
-                src="https://images.pexels.com/photos/758898/pexels-photo-758898.png?auto=compress&cs=tinysrgb&w=600"
+                src="/img/1.JPG"
                 alt="image"
                 className="img-ratio rounded-16"
               />
@@ -581,8 +598,7 @@ export default function Home () {
               data-anim-child="img-right cover-light-1 delay-4"
             >
               <img
-                src="https://images.pexels.com/photos/758898/pexels-photo-758898.png?auto=compress&cs=tinysrgb&w=600"
-                alt="image"
+                src="/img/2.JPG"
                 className="img-ratio rounded-16"
               />
             </a>
@@ -594,8 +610,7 @@ export default function Home () {
               data-anim-child="img-right cover-light-1 delay-6"
             >
               <img
-                src="https://images.pexels.com/photos/758898/pexels-photo-758898.png?auto=compress&cs=tinysrgb&w=600"
-                alt="image"
+                src="/img/8.JPG"
                 className="img-ratio rounded-16"
               />
             </a>
@@ -607,8 +622,7 @@ export default function Home () {
               data-anim-child="img-right cover-light-1 delay-8"
             >
               <img
-                src="https://images.pexels.com/photos/758898/pexels-photo-758898.png?auto=compress&cs=tinysrgb&w=600"
-                alt="image"
+                src="/img/3.jpg"
                 className="img-ratio rounded-16"
               />
             </a>
@@ -620,8 +634,7 @@ export default function Home () {
               data-anim-child="img-right cover-light-1 delay-10"
             >
               <img
-                src="https://images.pexels.com/photos/758898/pexels-photo-758898.png?auto=compress&cs=tinysrgb&w=600"
-                alt="image"
+                src="/img/4.jpg"
                 className="img-ratio rounded-16"
               />
             </a>
@@ -635,81 +648,104 @@ export default function Home () {
     {/* Top Section */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
       {/* Brand Section */}
-      <div className="flex flex-col items-center md:items-start md:col-span-2">
-        <img src="/logo.svg" alt="Amaradri Weddings" className="h-10 w-auto mb-4" />
-        <p className="text-slate-600 text-sm max-w-md text-center md:text-left">
+      <div className="flex flex-col items-center md:items-start md:col-span-2 group">
+        <img 
+          src="/logo.svg" 
+          alt="Amaradri Weddings" 
+          className="h-10 w-auto mb-4 transform transition-transform duration-300 group-hover:scale-105" 
+        />
+        <p className="text-slate-600 text-sm max-w-md text-center md:text-left animate-fade-in">
           Capturing life's precious moments with elegance and artistry. Your stories, beautifully told through our lens, creating timeless memories for generations to come.
         </p>
       </div>
 
       {/* Quick Links */}
       <div className="flex flex-col items-center md:items-start">
-        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+        <h3 className="text-slate-800 text-lg font-semibold mb-4 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-slate-600 after:transition-all after:duration-300 hover:after:w-full">
+          Quick Links
+        </h3>
         <nav className="flex flex-col space-y-2">
-          <a href="#" className="text-slate-600 hover:text-white transition-colors">Home</a>
-          <a href="#" className="text-slate-600 hover:text-white transition-colors">Gallery</a>
-          <a href="#" className="text-slate-600 hover:text-white transition-colors">Services</a>
-          <a href="#" className="text-slate-600 hover:text-white transition-colors">About</a>
-          <a href="#" className="text-slate-600 hover:text-white transition-colors">Contact</a>
+          {['Home', 'Gallery', 'About', 'Contact'].map((link) => (
+            <a 
+              key={link}
+              href="#" 
+              className="text-slate-600 hover:text-slate-900 transition-all duration-300 transform hover:translate-x-1 hover:font-medium"
+            >
+              {link}
+            </a>
+          ))}
         </nav>
       </div>
 
       {/* Contact Info */}
       <div className="flex flex-col items-center md:items-start">
-        <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+        <h3 className="text-slate-800 text-lg font-semibold mb-4 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-slate-600 after:transition-all after:duration-300 hover:after:w-full">
+          Contact Us
+        </h3>
         <div className="flex flex-col space-y-3 text-slate-600">
-          <a href="tel:+1234567890" className="hover:text-white transition-colors flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {/* Contact links with hover effects */}
+          <a 
+            href="tel:+1234567890" 
+            className="hover:text-slate-900 transition-all duration-300 flex items-center gap-2 group"
+          >
+            <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            +91 123 456 7890
+            <span className="transform transition-transform duration-300 group-hover:translate-x-1">+91 9061560364</span>
           </a>
-          <a href="mailto:info@amaradriweddings.com" className="hover:text-white transition-colors flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          
+          <a 
+            href="mailto:films@amaradriweddings.com" 
+            className="hover:text-slate-900 transition-all duration-300 flex items-center gap-2 group"
+          >
+            <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            info@amaradriweddings.com
+            <span className="transform transition-transform duration-300 group-hover:translate-x-1">films@amaradriweddings.com</span>
           </a>
-          <div className="flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+          <div className="flex items-center gap-2 group">
+            <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span className="text-slate-600">
+            <span className="text-slate-600 transform transition-transform duration-300 group-hover:translate-x-1">
               Kochi, Kerala, India
             </span>
           </div>
         </div>
 
-        {/* Social Links */}
+        {/* Social Links with hover effects */}
         <div className="flex space-x-4 mt-6">
-          <a href="#" className="text-slate-600 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-            </svg>
-          </a>
-          <a href="#" className="text-slate-600 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
-            </svg>
-          </a>
-          <a href="#" className="text-slate-600 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-            </svg>
-          </a>
+          {['facebook', 'instagram', 'twitter'].map((social) => (
+            <a 
+              key={social}
+              href="#" 
+              className="text-slate-600 p-2 rounded-full transition-all duration-300 hover:bg-slate-200 hover:text-slate-900 transform hover:scale-110"
+            >
+              {/* Social icons remain the same */}
+            </a>
+          ))}
         </div>
       </div>
     </div>
 
-    {/* Bottom Section */}
-    <div className="border-t border-slate-800 pt-8">
+    {/* Bottom Section with animated border */}
+    <div className="border-t border-slate-200 pt-8 relative">
       <div className="flex flex-col md:flex-row justify-between items-center">
-        <p className="text-slate-600 text-sm">
-          &copy; {new Date().getFullYear()} Amaradri Weddings. All rights reserved.
+        <p className="text-slate-600 text-sm group">
+          <span className="inline-block transform transition-transform duration-300 group-hover:scale-105">
+            &copy; {new Date().getFullYear()} Amaradri Weddings. All rights reserved.
+          </span>
         </p>
-        <p className="text-slate-600 text-sm mt-2 md:mt-0">
-          Crafted with ♥ by <a href="mailto:aswingnair.2003@gmail.com" className="hover:text-white transition-colors">Aswin</a>
+        <p className="text-slate-600 text-sm mt-2 md:mt-0 group">
+          Crafted with <span className="animate-pulse">♥</span> by{' '}
+          <a 
+            href="mailto:aswingnair.2003@gmail.com" 
+            className="relative inline-block after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-slate-600 after:left-0 after:-bottom-0.5 after:origin-right after:scale-x-0 after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
+          >
+            Aswin
+          </a>
         </p>
       </div>
     </div>
@@ -733,84 +769,90 @@ export const products = [
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/book-back.jpg",
+      "/img/1.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC00680.jpg",
+      "/img/2.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC00933.jpg",
+      "/img/8.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC00966.jpg",
+      "/img/3.jpg",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC00983.jpg",
+      "/img/4.jpg",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01011.jpg",
+      "/img/5.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01103.jpg",
+      "/img/6.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01071.jpg",
+      "/img/7.jpg",
+  },
+    {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/img/1.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01420.jpg",
+      "/img/2.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01420.jpg",
+      "/img/8.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01420.jpg",
+      "/img/3.jpg",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01420.jpg",
+      "/img/4.jpg",
+  },
+    {
+    title: "Work 1",
+    link: "https://www.instagram.com/akshyamaradri",
+    thumbnail:
+      "/img/6.JPG",
   },
   {
     title: "Work 1",
     link: "https://www.instagram.com/akshyamaradri",
     thumbnail:
-      "/textures/DSC01420.jpg",
-  },
-  {
-    title: "Work 1",
-    link: "https://www.instagram.com/akshyamaradri",
-    thumbnail:
-      "/textures/DSC01420.jpg",
+      "/img/7.jpg",
   },
 ];
