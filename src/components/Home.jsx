@@ -710,7 +710,7 @@ export default function Home () {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <span className="text-slate-600 transform transition-transform duration-300 group-hover:translate-x-1">
-              Kochi, Kerala, India
+              Pathanamthitta, Kerala, India
             </span>
           </div>
         </div>
