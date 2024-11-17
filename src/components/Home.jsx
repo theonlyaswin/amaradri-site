@@ -567,6 +567,47 @@ export default function Home () {
     <div className="px-60">
       <div className="line -horizontal bg-border" />
     </div>
+
+      <section className="py-16 ">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-col">
+    <div className="text-center mb-12">
+      <h2 className="text-64 md:text-40 capitalize text-slate-800 mb-4">Find Us</h2>
+      <p className="text-slate-600 max-w-2xl mx-auto">
+        Visit our studio in Pathanamthitta, Kerala for a consultation about your special day
+      </p>
+    </div>
+    
+    <div className="relative w-[95%] md:w-[50%] h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg mx-auto">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.5655111953247!2d76.78699999999999!3d9.2655556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0619c6c0d2552f%3A0x1c5f6bf32c1faa08!2sAmaradri%20Weddings!5e0!3m2!1sen!2sin!4v1710861445040!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="absolute inset-0 rounded-lg"
+        title="Amaradri Weddings Location"
+      ></iframe>
+    </div>
+
+    <div className="mt-8 text-center">
+      <a 
+        href="https://maps.app.goo.gl/gsSwtc4xFM6GFNtQ8"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-300"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+
     <section className="layout-pt-lg pb-30">
       <div data-anim-wrap="" className="px-60 md:px-20">
         <div className="row justify-center text-center">
@@ -576,7 +617,7 @@ export default function Home () {
             className="col-auto"
           >
             <div className="text-15 uppercase mb-30 sm:mb-10">
-              @akshayamaradri
+              @amaradriweddings
             </div>
             <h2 className="text-64 md:text-40">Follow us on Instagram</h2>
           </div>
@@ -672,7 +713,7 @@ export default function Home () {
           {['Home', 'Gallery', 'About', 'Contact'].map((link) => (
             <a 
               key={link}
-              href="#" 
+              href={link === 'Home' ? '#' : `#${link.toLowerCase()}`} 
               className="text-slate-600 hover:text-slate-900 transition-all duration-300 transform hover:translate-x-1 hover:font-medium"
             >
               {link}
@@ -738,7 +779,7 @@ export default function Home () {
 
   {/* Instagram */}
   <a 
-    href="https://instagram.com/akshyamaradri" 
+    href="https://instagram.com/amaradriweddings" 
     target="_blank"
     rel="noopener noreferrer"
     className="text-slate-600 p-2 rounded-full transition-all duration-300 hover:bg-slate-200 hover:text-slate-900 transform hover:scale-110"
@@ -762,7 +803,7 @@ export default function Home () {
 
   {/* YouTube */}
   <a 
-    href="https://youtube.com/" 
+    href="https://youtube.com/@amaradriweddings" 
     target="_blank"
     rel="noopener noreferrer"
     className="text-slate-600 p-2 rounded-full transition-all duration-300 hover:bg-slate-200 hover:text-slate-900 transform hover:scale-110"
