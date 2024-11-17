@@ -58,15 +58,37 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    (<div
-      className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0 mt-12">
-      <h1 className="text-2xl md:text-7xl font-bold text-black">
-        Making your day more special <br /> than it is.
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-black">
-        We put our users happiness first in every frame we capture and make sure we have a good time together.
-      </p>
-    </div>)
+    (
+          <section className="layout-pt-lg" id="gallery">
+      <div data-anim-wrap="" className="container">
+        <div className="row justify-center text-center" >
+          <div className="col-xl-8 col-lg-10">
+            <div data-split="lines" data-anim-child="split-lines delay-2">
+              <div className="text-15 uppercase mb-30 sm:mb-10" >
+                TIMELESS PHOTOGRAPHY
+              </div>
+              <h2 className="text-64 md:text-40 capitalize">
+                Where Every Frame <br className="hidden md:block" />
+    Tells Your Story
+              </h2>
+            </div>
+            <div
+              data-anim-child="slide-up delay-4"
+              className="row justify-center"
+            >
+              <div className="col-lg-8">
+                <p className="mt-40 md:mt-20">
+                 Dive into our meticulously curated collection, where moments transcend time, emotions find their purest expression, and artistic excellence comes to life.Explore a world where every detail tells a story, and every frames invites you to experience the extraordinary.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    )
   );
 };
 
@@ -92,12 +114,7 @@ export const ProductCard = ({
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title} />
       </a>
-      <div
-        className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2
-        className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+
     </motion.div>)
   );
 };
